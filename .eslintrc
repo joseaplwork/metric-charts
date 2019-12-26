@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": 0,
+    "no-debugger": 1
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [[ "@app", "./client" ]]
+      }
+  }
+  },
+  "plugins": [
+    "prettier"
+  ]
+}

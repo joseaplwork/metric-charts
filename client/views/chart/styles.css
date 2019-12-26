@@ -1,0 +1,47 @@
+text {
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+rect {
+  stroke: #888888;
+}
+
+.chart {
+  display: grid;
+  border-bottom: 2px solid #e4e4e4;
+  justify-items: center;
+  min-width: 350px;
+}
+
+.chart__graph {
+  margin: 0;
+}
+
+.chart__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.chart__info__side {
+  color: #ababab;
+  padding-bottom: 0.8em;
+}
+
+.chart__info__side.chart__info__side--right {
+  text-align: right;
+}
+
+.chart__info__side h4 {
+  margin: 0.5em 0;
+}
+
+.chart__info__side p {
+  margin: 0;
+}
+
+.chart__info__side__percentage {
+  margin-right: 0.25em;
+  color: #585858;
+}
