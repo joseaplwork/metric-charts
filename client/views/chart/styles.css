@@ -7,6 +7,26 @@ rect {
   stroke: #888888;
 }
 
+.pie--wavegraph--mask {
+  stroke: white;
+  stroke-width: 1.5;
+  fill: #252525;
+}
+
+.pie--title {
+  text-anchor: middle;
+  font-size: 1em;
+  fill: #a4a4a4;
+  font-weight: 400;
+}
+
+.pie--total {
+  text-anchor: middle;
+  font-size: 1.5em;
+  fill: #3f3f3f;
+  dominant-baseline: central;
+}
+
 .chart {
   display: grid;
   border-bottom: 2px solid #e4e4e4;

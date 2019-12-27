@@ -16,8 +16,10 @@ export default function pieView(data, el, finalSize) {
   const rootFontSize = Math.round(size / 12);
   const rectPosition = Math.round(size / 2.25);
   const titlePosition = Math.round(size * 0.075);
+  const wavePosition = Math.round(size * 0.4);
   const colors = [primaryColor, secondaryColor];
-
+  const maskRadius = Math.round(size / 2.35);
+  const waveSize = maskRadius * 2.25;
   const pie = d3.pie().sort(null);
 
   const arc = d3
@@ -25,6 +27,7 @@ export default function pieView(data, el, finalSize) {
     .innerRadius(radius * 0.9)
     .outerRadius(radius);
 
+  // Main SVG
   const svg = d3
     .select(element)
     .append('svg')
@@ -34,7 +37,16 @@ export default function pieView(data, el, finalSize) {
     .append('g')
     .attr('transform', `translate(${size / 2}, ${size / 2})`);
 
-  // Circle dashes
+  // Circles
+  svg
+    .selectAll('path')
+    .data(pie([primaryPercentage, secondaryPercentage]))
+    .enter()
+    .append('path')
+    .attr('fill', (d, i) => colors[i])
+    .attr('d', arc);
+
+  // Dashes
   const dashes = [
     { y: -rectPosition, x: 0 },
     { y: rectPosition - rectSize, x: 0 },
@@ -51,32 +63,75 @@ export default function pieView(data, el, finalSize) {
       .attr('height', y ? rectSize : 1);
   });
 
-  // Circle
-  svg
-    .selectAll('path')
-    .data(pie([primaryPercentage, secondaryPercentage]))
-    .enter()
-    .append('path')
-    .attr('fill', (d, i) => colors[i])
-    .attr('d', arc);
+  // Wave graph
+  const rangeData = [];
+  const isPrimaryHigher = primaryPercentage > secondaryPercentage;
 
-  // title text
+  if (isPrimaryHigher) {
+    for (let i = secondaryPercentage; i <= primaryPercentage; i += 1) {
+      rangeData.push(i);
+    }
+  } else {
+    for (let i = secondaryPercentage; i >= primaryPercentage; i -= 1) {
+      rangeData.push(i);
+    }
+  }
+
+  const waveData = rangeData.reduce((acc, value, index) => {
+    if (value === 0 || value === rangeData.length - 1 || value % 2 === 0) {
+      const randomValue = Math.floor(Math.random() * 6) - 5;
+
+      acc.push({ y: value + randomValue, x: index });
+    }
+
+    return acc;
+  }, []);
+
+  const xAxis = d3
+    .scaleLinear()
+    .domain([0, d3.max(waveData, d => d.x)])
+    .range([waveSize, 0]);
+
+  const yAxis = d3
+    .scaleLinear()
+    .domain([0, d3.max(waveData, d => d.y) * 2])
+    .range([waveSize, 0]);
+
+  const area = d3
+    .area()
+    .x(d => xAxis(d.x))
+    .y0(waveSize)
+    .y1(d => yAxis(d.y));
+
+  svg
+    .append('mask')
+    .attr('id', `line-mask-${title}`)
+    .append('path')
+    .attr('class', 'pie--wavegraph--mask')
+    .attr('transform', `translate(-${waveSize / 2}, -${wavePosition})`)
+    .datum(waveData)
+    .attr('d', area);
+
+  // Circle wave mask
+  svg
+    .append('circle')
+    .attr('mask', `url(#line-mask-${title})`)
+    .attr('fill', secondaryColor)
+    .attr('cx', 0)
+    .attr('cy', 0)
+    .attr('r', maskRadius);
+
+  // Title text
   svg
     .append('text')
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '1em')
-    .attr('fill', '#a4a4a4')
-    .attr('font-weight', '400')
+    .attr('class', 'pie--title')
     .attr('y', -titlePosition)
     .text(title);
 
   // Total text
   svg
     .append('text')
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '1.5em')
-    .attr('fill', '#3f3f3f')
-    .attr('dominant-baseline', 'central')
+    .attr('class', 'pie--total')
     .text(total);
 
   return element;
