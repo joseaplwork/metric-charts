@@ -6,7 +6,7 @@ import types from '@app/data/metrics/constants';
 jest.mock('@app/utils/request');
 jest.mock('@app/data/metrics/actions');
 
-describe('Api middleware', () => {
+describe('api middleware', () => {
   const action = { type: 'test' };
   test('should not call api if called with the wrong action', () => {
     apiMiddleware(action);
