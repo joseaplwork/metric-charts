@@ -42,7 +42,7 @@ describe('Store', () => {
     expect(mockContainer).toHaveBeenCalled();
   });
 
-  test('should return store state', () => {
+  test('should return state', () => {
     const store = setupStore();
 
     expect(store.getState()).toBeInstanceOf(Object);

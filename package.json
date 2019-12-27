@@ -35,6 +35,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.17.1",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^8.0.1",
@@ -48,16 +49,17 @@
     "webpack-dev-server": "^3.10.1"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!lit-html).+\\.js"
+    ],
     "moduleFileExtensions": [
       "js"
-    ],
-    "moduleDirectories": [
-      "node_modules"
     ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
     "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
       "^@app(.*)$": "<rootDir>/client$1"
     }
   }
