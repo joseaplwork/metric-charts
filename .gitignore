@@ -1,2 +1,4 @@
+# ignore files with spam
 **/node_modules/**
 **/dist/**
+**/coverage/**

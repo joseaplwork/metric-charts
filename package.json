@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:watch": "jest --verbose --watchAll --coverage",
     "start": "node server & APP_ENVIRONMENT=development webpack-dev-server --client-log-level trace",
     "start:prod": "node server & npm run build && cp ./favicon.ico ./dist && serve dist",
     "build": "rimraf ./dist && APP_ENVIRONMENT=production npx webpack --config webpack.config.js"
@@ -21,6 +22,7 @@
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.7",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "cors": "^2.8.5",
     "css-loader": "^3.4.0",
@@ -33,6 +35,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.17.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
@@ -43,5 +46,19 @@
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@app(.*)$": "<rootDir>/client$1"
+    }
   }
 }

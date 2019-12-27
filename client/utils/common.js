@@ -1,12 +1,3 @@
-export function apiRequest(url = '') {
-  return fetch(url, {
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-}
-
 export function getPercentage(current, total) {
   return (current / total) * 100;
 }

@@ -1,5 +1,9 @@
 import store from '@app/store';
-import { getPercentage, formatNumber, formatPercentage } from '@app/utils';
+import {
+  getPercentage,
+  formatNumber,
+  formatPercentage,
+} from '@app/utils/common';
 
 import { updateMetricsState } from './actions';
 import types, { colors } from './constants';

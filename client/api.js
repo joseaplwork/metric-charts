@@ -1,5 +1,5 @@
 import store from '@app/store';
-import { apiRequest } from '@app/utils';
+import apiRequest from '@app/utils/request';
 import types from '@app/data/metrics/constants';
 import {
   fetchMetricsDataSuccess,
@@ -12,8 +12,8 @@ export default async function apiMiddleware(action) {
 
     try {
       const response = await apiRequest(server);
-      const myJson = await response.json();
-      store.dispatch(fetchMetricsDataSuccess(myJson));
+
+      store.dispatch(fetchMetricsDataSuccess(response));
     } catch (error) {
       // Webpack will remove the below `if` statement in production mode
       if (process.env.NODE_ENV === 'development') {
