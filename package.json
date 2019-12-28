@@ -1,5 +1,5 @@
 {
-  "name": "metrics-chart",
+  "name": "metric-charts",
   "version": "1.0.0",
   "description": "",
   "main": "client/index.js",
