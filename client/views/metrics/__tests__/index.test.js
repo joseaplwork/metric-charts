@@ -7,7 +7,7 @@ import metricsView from '..';
 jest.mock('@app/views/chart');
 
 describe('metrics view', () => {
-  it('should render given content', () => {
+  it('should render view  with given content', () => {
     const chartsInfo = [{ key: 1 }, { key: 2 }];
 
     mockChartView.mockReturnValue(html`

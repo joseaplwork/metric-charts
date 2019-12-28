@@ -18,7 +18,7 @@ describe('metricsContainer', () => {
   });
 
   describe('store', () => {
-    it('should subscribe the metricsContainer reducer', () => {
+    it('should subscribe the `metricsContainer` reducer', () => {
       expect(mockStore.subscribeReducer).toHaveBeenCalled();
     });
   });

@@ -1,7 +1,7 @@
 import pieView from '../pie';
 
 describe('pie view', () => {
-  it('should render given data', () => {
+  it('should render view with given data', () => {
     const data = {
       title: 'test',
       total: 'test',

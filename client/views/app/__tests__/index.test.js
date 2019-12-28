@@ -2,7 +2,7 @@ import { render, html } from 'lit-html';
 import appView from '..';
 
 describe('app view', () => {
-  it('should render given content', () => {
+  it('should render view with given content', () => {
     const content = html`
       <h1>Test</h1>
     `;

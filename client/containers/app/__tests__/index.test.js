@@ -28,7 +28,7 @@ describe('appContainer', () => {
       expect(mockAppView).toHaveBeenCalled();
     });
 
-    it('should render `mockMetricsContainer` with current state', () => {
+    it('should render `metricsContainer` with current state', () => {
       const state = buildInitState();
 
       appContainer(state);

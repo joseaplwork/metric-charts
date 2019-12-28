@@ -2,7 +2,7 @@ import { render } from 'lit-html';
 import infoView from '../info';
 
 describe('info view', () => {
-  it('should render given data', () => {
+  it('should render view with given data', () => {
     const data = {
       smartphone: {
         formattedValue: 'test',
