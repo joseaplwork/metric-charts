@@ -1,11 +1,11 @@
 import { render, html } from 'lit-html';
 
-import chartView from '..';
 import mockPieView from '../pie';
 import mockInfoView from '../info';
+import chartView from '..';
 
-jest.mock('../info');
 jest.mock('../pie');
+jest.mock('../info');
 
 describe('app view', () => {
   it('should render given content', () => {

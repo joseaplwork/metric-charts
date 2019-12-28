@@ -1,4 +1,5 @@
 import { render, html } from 'lit-html';
+
 import appView from '..';
 
 describe('app view', () => {

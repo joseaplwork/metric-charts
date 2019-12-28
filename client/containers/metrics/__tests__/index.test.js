@@ -1,5 +1,6 @@
 import mockStore from '@app/store';
 import mockMetricsView from '@app/views/metrics';
+
 import metricsContainer from '..';
 
 jest.mock('@app/store');

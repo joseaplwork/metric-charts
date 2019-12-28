@@ -1,4 +1,4 @@
-import { setupStore } from '@app/store';
+import { setupStore } from '../store';
 
 describe('Store', () => {
   const action = { type: 'test' };

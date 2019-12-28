@@ -1,4 +1,5 @@
 import types from '@app/data/metrics/constants';
+
 import reducer from '../reducer';
 
 const buildState = state => ({

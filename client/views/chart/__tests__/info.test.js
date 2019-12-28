@@ -1,4 +1,5 @@
 import { render } from 'lit-html';
+
 import infoView from '../info';
 
 describe('info view', () => {

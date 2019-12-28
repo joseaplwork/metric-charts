@@ -1,7 +1,8 @@
 import mockApiRequest from '@app/utils/request';
 import * as mockMetricsActions from '@app/data/metrics/actions';
-import apiMiddleware from '@app/api';
 import types from '@app/data/metrics/constants';
+
+import apiMiddleware from '../api';
 
 jest.mock('@app/utils/request');
 jest.mock('@app/data/metrics/actions');

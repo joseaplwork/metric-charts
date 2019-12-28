@@ -2,6 +2,7 @@ import mockStore from '@app/store';
 import mockAppView from '@app/views/app';
 import mockMetricsContainer from '@app/containers/metrics';
 import * as mockMetricsActions from '@app/data/metrics/actions';
+
 import appContainer from '..';
 
 jest.mock('@app/store');

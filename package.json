@@ -2,9 +2,9 @@
   "name": "metrics-chart",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "client/index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --verbose --coverage",
     "test:watch": "jest --verbose --watchAll --coverage",
     "start": "node server & APP_ENVIRONMENT=development webpack-dev-server --client-log-level trace",
     "start:prod": "node server & npm run build && cp ./favicon.ico ./dist && serve dist",

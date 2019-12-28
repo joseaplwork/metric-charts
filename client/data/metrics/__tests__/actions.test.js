@@ -1,4 +1,4 @@
-import types from '@app/data/metrics/constants';
+import types from '../constants';
 import {
   fetchMetricsData,
   fetchMetricsDataSuccess,
