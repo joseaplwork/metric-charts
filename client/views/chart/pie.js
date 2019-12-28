@@ -1,4 +1,9 @@
-import * as d3 from 'd3';
+import * as d3Selection from 'd3-selection';
+import * as d3Shape from 'd3-shape';
+import * as d3Scale from 'd3-scale';
+import { max } from 'd3-array';
+
+const d3 = { ...d3Selection, ...d3Shape, ...d3Scale, max };
 
 export default function pieView(data, el, finalSize) {
   const {
