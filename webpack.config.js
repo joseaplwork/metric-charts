@@ -3,12 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const devConfig = {};
 
-if (process.env.APP_ENVIRONMENT === 'development') {
+if (process.env.NODE_ENV === 'development') {
   devConfig.devtool = 'source-map';
 }
 
 module.exports = {
-  mode: process.env.APP_ENVIRONMENT || 'production',
+  mode: process.env.NODE_ENV || 'production',
   entry: {
     index: './client/index.js',
   },
@@ -37,6 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        sideEffects: true,
         use: [
           'style-loader',
           {

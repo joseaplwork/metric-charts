@@ -2,6 +2,7 @@
   "name": "metric-charts",
   "version": "1.0.0",
   "description": "",
+  "sideEffects": false,
   "main": "client/index.js",
   "scripts": {
     "test": "jest --verbose --coverage",
