@@ -1,5 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 
 const devConfig = {};
 
@@ -39,7 +43,7 @@ module.exports = {
         test: /\.css$/,
         sideEffects: true,
         use: [
-          'style-loader',
+          { loader: MiniCssExtractPlugin.loader },
           {
             loader: 'css-loader',
             options: { modules: { mode: 'local', localIdentName: '[local]' } },
@@ -49,10 +53,30 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({ extractComments: true }),
+      new OptimizeCSSAssetsPlugin(),
+    ],
+    usedExports: true,
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
       template: './client/index.html',
     }),
+    new MiniCssExtractPlugin(),
+    new StyleExtHtmlWebpackPlugin(),
   ],
   ...devConfig,
 };
