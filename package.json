@@ -9,7 +9,7 @@
     "test:watch": "jest --verbose --watchAll --coverage",
     "start": "node server & NODE_ENV=development webpack-dev-server --client-log-level trace",
     "build": "rimraf ./dist && NODE_ENV=development npx webpack --config webpack.config.js",
-    "start:prod": "node server & npm run build && cp ./favicon.ico ./dist && serve dist",
+    "start:prod": "node server & npm run build:prod && cp ./favicon.ico ./dist && serve dist",
     "build:prod": "rimraf ./dist && NODE_ENV=production npx webpack --config webpack.config.js"
   },
   "author": "joseaplwork",
