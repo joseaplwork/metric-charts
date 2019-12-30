@@ -16,15 +16,14 @@ rect {
 .pie--title {
   text-anchor: middle;
   font-size: 1em;
-  fill: #a4a4a4;
+  fill: var(--primary-text-color);
   font-weight: 400;
 }
 
 .pie--total {
   text-anchor: middle;
   font-size: 1.5em;
-  fill: #3f3f3f;
-  dominant-baseline: central;
+  fill: var(--secondary-text-color);
 }
 
 .chart {
@@ -45,7 +44,7 @@ rect {
 }
 
 .chart__info__side {
-  color: #ababab;
+  color: var(--primary-text-color);
   padding-bottom: 0.8em;
 }
 
@@ -63,5 +62,5 @@ rect {
 
 .chart__info__side__percentage {
   margin-right: 0.25em;
-  color: #585858;
+  color: var(--secondary-text-color);
 }

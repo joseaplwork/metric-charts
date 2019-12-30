@@ -1,7 +1,7 @@
 export const colors = [
   { primary: '#88d13c', secondary: '#38690d' },
-  { primary: '#6ac9e4', secondary: '#2a536b' },
-  { primary: '#e7c700', secondary: '#bd5a20' },
+  { primary: '#72c6e8', secondary: '#2a536b' },
+  { primary: '#f5c209', secondary: '#bd5a20' },
 ];
 
 export const ActionTypes = {

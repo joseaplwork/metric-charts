@@ -137,6 +137,7 @@ export default function pieView(data, el, finalSize) {
   svg
     .append('text')
     .attr('class', 'pie--total')
+    .attr('dominant-baseline', 'central')
     .text(total);
 
   return element;
