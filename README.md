@@ -41,11 +41,11 @@ Things to evaluate:
 ## Architecture
 
 The project required a vanilla js implementation and in order to keep the code clean and scalable I implemented the flux architecture (one way data binding) to this project so there is a clear separation of concerns among:
- `views`: holds the visual UI `charts`, `app` and `metrics`
- `containers`: holds the data binding logic between `data` and `views`
- `data`: holds the application's models state
- `middleware`: holds the application logic
-  `store`: pure vanilla js implementation of the architecture logic
+ - `views`: holds the visual UI `charts`, `app` and `metrics`
+ - `containers`: holds the data binding logic between `data` and `views`
+ - `data`: holds the application's models state
+ - `middleware`: holds the application logic
+ - `store`: pure vanilla js implementation of the architecture logic
 ## Setup
 - Required Node version: **>=10.17.0**
 - Required Npm version: **>=6.11.3**
