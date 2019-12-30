@@ -62,10 +62,6 @@ To start the development run:
 ```sh
 npm start
 ```
-and then open in the browser:
-```
-http://localhost:8080/
-```
 Curious about the bundle? run the command and check the `dist` folder:
 
 ```sh

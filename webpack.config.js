@@ -9,6 +9,7 @@ const devConfig = {};
 
 if (process.env.NODE_ENV === 'development') {
   devConfig.devtool = 'source-map';
+  devConfig.devServer = { open: true };
 }
 
 module.exports = {
