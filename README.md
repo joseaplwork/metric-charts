@@ -62,6 +62,10 @@ To start the development run:
 ```sh
 npm start
 ```
+and then open in the browser:
+```
+http://localhost:8080/
+```
 Curious about the bundle? run the command and check the `dist` folder:
 
 ```sh
@@ -73,7 +77,10 @@ To start the optimized production mode run:
 ```sh
 npm run start:prod
 ```
-
+and then open in the browser:
+```
+http://localhost:5000/
+```
 Curious about the bundle? run the command and check the `dist` folder:
 ```sh
 npm run build:prod

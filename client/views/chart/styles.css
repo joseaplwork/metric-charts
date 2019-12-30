@@ -29,17 +29,18 @@ rect {
 .chart {
   display: grid;
   border-bottom: 2px solid #e4e4e4;
-  justify-items: center;
   min-width: 350px;
 }
 
 .chart__graph {
   margin: 0;
+  justify-self: center;
 }
 
 .chart__info {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-self: center;
   width: 100%;
 }
 
