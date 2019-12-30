@@ -1,5 +1,10 @@
 @import 'normalize.css';
 
+:root {
+  --primary-text-color: #888888;
+  --secondary-text-color: #000000;
+}
+
 * {
   box-sizing: border-box;
 }
