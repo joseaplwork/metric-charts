@@ -1,7 +1,25 @@
 .metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-column-gap: 50px;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
   font-family: sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 3em;
+  grid-row-gap: 3em;
+  justify-content: center;
+  justify-items: center;
 }
+
+@media (min-width: 670px) {
+  .metrics {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.metrics > svg {
+  margin: 0.5em;
+}
+
