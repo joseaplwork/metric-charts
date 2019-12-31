@@ -1,4 +1,4 @@
-import { render } from 'lit-html';
+import { renderView } from '@app/utils/renderer';
 
 import infoView from '../info';
 
@@ -17,7 +17,7 @@ describe('info view', () => {
       },
     };
 
-    render(infoView(data), document.body);
+    renderView(infoView(data), document.body);
 
     const infoNode = document.querySelectorAll('.chart__info');
     const infoSideNode = document.querySelectorAll('.chart__info__side');

@@ -1,4 +1,4 @@
-import { render, html } from 'lit-html';
+import { renderView, composeView } from '@app/utils/renderer';
 
 import mockChartView from '@app/views/chart';
 
@@ -10,11 +10,11 @@ describe('metrics view', () => {
   it('should render view  with given content', () => {
     const chartsInfo = [{ key: 1 }, { key: 2 }];
 
-    mockChartView.mockReturnValue(html`
+    mockChartView.mockReturnValue(composeView`
       <div class="chart"></div>
     `);
 
-    render(metricsView(chartsInfo), document.body);
+    renderView(metricsView(chartsInfo), document.body);
 
     const metricsNode = document.querySelector('.metrics');
     const chartNodes = document.querySelectorAll('.chart');

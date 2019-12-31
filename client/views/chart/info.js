@@ -1,9 +1,9 @@
-import { html } from 'lit-html';
+import { composeView } from '@app/utils/renderer';
 
 export default function infoView(data) {
   const { smartphone, tablet } = data;
 
-  return html`
+  return composeView`
     <div class="chart__info">
       <div class="chart__info__side">
         <h4 style="color:${tablet.color}">Tablet</h4>

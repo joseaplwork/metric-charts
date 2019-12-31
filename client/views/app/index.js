@@ -1,9 +1,9 @@
-import { html } from 'lit-html';
+import { composeView } from '@app/utils/renderer';
 
 import './styles.css';
 
 export default function AppView(content) {
-  return html`
+  return composeView`
     <main>${content}</main>
   `;
 }

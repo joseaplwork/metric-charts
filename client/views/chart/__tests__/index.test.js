@@ -1,4 +1,4 @@
-import { render, html } from 'lit-html';
+import { renderView, composeView } from '@app/utils/renderer';
 
 import mockPieView from '../pie';
 import mockInfoView from '../info';
@@ -17,11 +17,11 @@ describe('app view', () => {
     const pie = document.createElement('figure');
 
     mockPieView.mockReturnValueOnce(pie);
-    mockInfoView.mockReturnValueOnce(html`
+    mockInfoView.mockReturnValueOnce(composeView`
       <div id="info"></div>
     `);
 
-    render(chartView(data), document.body);
+    renderView(chartView(data), document.body);
 
     const chartNode = document.querySelector('.chart');
     const pieNode = document.querySelector('figure');

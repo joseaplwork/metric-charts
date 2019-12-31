@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { composeView } from '@app/utils/renderer';
 
 import pieView from './pie';
 import infoView from './info';
@@ -24,7 +24,7 @@ export default function chartView(data, size) {
 
   pieElement.classList.add('chart__graph');
 
-  return html`
+  return composeView`
     <section class="chart">
       ${pieElement} ${infoView(device)}
     </section>

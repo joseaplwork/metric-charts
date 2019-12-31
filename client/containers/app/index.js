@@ -1,4 +1,4 @@
-import { render } from 'lit-html';
+import { renderView } from '@app/utils/renderer';
 
 import store from '@app/store';
 import reducer from '@app/data/app/reducer';
@@ -7,14 +7,14 @@ import metricsContainer from '@app/containers/metrics';
 import { fetchMetricsData } from '@app/data/metrics/actions';
 
 function appContainer(state) {
+  const rootNode = document.querySelector('#root');
   const { chartsInfo, isRequesting, isAppReady } = state;
-  const rootElement = document.querySelector('#root');
 
   if (isAppReady && !isRequesting && !chartsInfo.length) {
     store.dispatch(fetchMetricsData());
   }
 
-  render(appView(metricsContainer(state)), rootElement);
+  renderView(appView(metricsContainer(state)), rootNode);
 }
 
 store.subscribeReducer(reducer);

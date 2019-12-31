@@ -16,8 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "d3": "^5.14.2",
-    "lit-html": "^1.1.2"
+    "d3": "^5.14.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -46,7 +45,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "serve": "^11.2.0",
+    "serve": "^11.3.0",
     "style-ext-html-webpack-plugin": "^4.1.2",
     "style-loader": "^1.1.1",
     "webpack": "^4.41.4",
@@ -54,9 +53,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!lit-html).+\\.js"
-    ],
     "moduleFileExtensions": [
       "js"
     ],
