@@ -8,7 +8,7 @@ import {
 
 export default async function apiMiddleware(action) {
   if (action.type === types.FETCH_METRICS_REQUEST) {
-    const server = 'http://localhost:3000/';
+    const server = 'http://localhost:3005/';
 
     try {
       const response = await apiRequest(server);
